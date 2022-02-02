@@ -18,7 +18,7 @@
             if (cells.Length < 3)
             {
                 // Log that and return null
-                logger.LogInfo("Cells more than 3 for: " + line);
+                logger.LogInfo("Cells more than 3: " + line);
                 // Do not fail if one record parsing fails, return null
                 return null; // TODO Implement
             }
@@ -38,7 +38,10 @@
 
             // Then, you'll need an instance of the TacoBell class
             // With the name and point set correctly
-            var tacoBell = new TacoBell(name, new Point() { Latitude = latitude, Longitude = longitude});
+
+            //var tacoBell = new TacoBell(name, longitude, latitude); //Orinal way I was trying to get to work
+            var tacoBell = new TacoBell(name, new Point() { Longitude = longitude, Latitude = latitude });
+
 
             // Then, return the instance of your TacoBell class
             // Since it conforms to ITrackable

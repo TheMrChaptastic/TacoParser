@@ -57,11 +57,11 @@ namespace LoggingKata
             // Once you've looped through everything, you've found the two Taco Bells farthest away from each other.
             foreach(var store1 in locations)
             {
-                var geo1 = new GeoCoordinate(store1.Location.Latitude, store1.Location.Longitude);
+                var locA = new GeoCoordinate(store1.Location.Latitude, store1.Location.Longitude);
                 foreach (var store2 in locations)
                 {
-                    var geo2 = new GeoCoordinate(store2.Location.Latitude, store2.Location.Longitude);
-                    tempDistance = geo1.GetDistanceTo(geo2);
+                    var locB = new GeoCoordinate(store2.Location.Latitude, store2.Location.Longitude);
+                    tempDistance = locA.GetDistanceTo(locB);
 
                     if(tempDistance > distance)
                     {

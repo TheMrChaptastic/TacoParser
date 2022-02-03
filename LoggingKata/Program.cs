@@ -29,9 +29,10 @@ namespace LoggingKata
                 foreach (var store2 in locations)
                 {
                     var locB = new GeoCoordinate(store2.Location.Latitude, store2.Location.Longitude);
-                    if(locA.GetDistanceTo(locB) > distance)
+                    var temp = locA.GetDistanceTo(locB); //So only does math once and stores it
+                    if (temp > distance)
                     {
-                        distance = locA.GetDistanceTo(locB);
+                        distance = temp;
                         tracked1 = store1;
                         tracked2 = store2;
                     }

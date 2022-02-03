@@ -15,19 +15,12 @@
             var longitude = 0.0;
             if (cells.Length < 3)
             {
-                logger.LogInfo("Cells more than 3: " + line);
+                logger.LogError("Cells more than 3: " + line);
                 return null; 
             }
 
-            try //Added try catch just in case (not needed) ¯\_(ツ)_/¯
-            {
-                latitude = double.Parse(cells[0]);
-                longitude = double.Parse(cells[1]);
-            }
-            catch
-            {
-                logger.LogError($"Couldn't Parse {cells[0]} or {cells[1]} to doubles."); //Should never happen
-            }
+            latitude = double.Parse(cells[0]); //Took out try Parse because input isnt going to be changing and works as is
+            longitude = double.Parse(cells[1]);
             var name = cells[2];
 
             var tacoBell = new TacoBell(name, new Point() { Longitude = longitude, Latitude = latitude });

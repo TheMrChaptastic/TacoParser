@@ -6,10 +6,8 @@ namespace LoggingKata
 {
     public class TacoBell : ITrackable
     {
-        public TacoBell(string name, Point loc)
+        public TacoBell()
         {
-            Location = loc;
-            Name = name;
         }
         public string Name { get; set; }
         public Point Location { get; set; }

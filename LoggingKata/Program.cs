@@ -21,7 +21,7 @@ namespace LoggingKata
 
             ITrackable tracked1 = null; //Keeps track of 2 furthest stores during foreach loop and overwrites them
             ITrackable tracked2 = null;
-            var distance = 0.0; //tempDistance is used for each check during loops and overwrites distance and tracked stores if tempDistance exceeds it.
+            var distance = 0.0; //overwrites distance and tracked stores if GetDistanceTo exceeds it.
 
             foreach(var store1 in locations)
             {

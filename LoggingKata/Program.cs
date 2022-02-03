@@ -22,7 +22,6 @@ namespace LoggingKata
             ITrackable tracked1 = null; //Keeps track of 2 furthest stores during foreach loop and overwrites them
             ITrackable tracked2 = null;
             var distance = 0.0; //tempDistance is used for each check during loops and overwrites distance and tracked stores if tempDistance exceeds it.
-            var tempDistance = 0.0;
 
             foreach(var store1 in locations)
             {
@@ -30,11 +29,9 @@ namespace LoggingKata
                 foreach (var store2 in locations)
                 {
                     var locB = new GeoCoordinate(store2.Location.Latitude, store2.Location.Longitude);
-                    tempDistance = locA.GetDistanceTo(locB);
-
-                    if(tempDistance > distance)
+                    if(locA.GetDistanceTo(locB) > distance)
                     {
-                        distance = tempDistance;
+                        distance = locA.GetDistanceTo(locB);
                         tracked1 = store1;
                         tracked2 = store2;
                     }

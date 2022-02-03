@@ -26,7 +26,7 @@ namespace LoggingKata
 
             foreach(var store1 in locations)
             {
-                var locA = new GeoCoordinate(store1.Location.Latitude, store1.Location.Longitude);
+                var locA = new GeoCoordinate(store1.Location.Latitude, store1.Location.Longitude);  //current store getting distance to other stores
                 foreach (var store2 in locations)
                 {
                     var locB = new GeoCoordinate(store2.Location.Latitude, store2.Location.Longitude);

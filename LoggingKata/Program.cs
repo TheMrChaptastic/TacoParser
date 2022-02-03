@@ -38,10 +38,9 @@ namespace LoggingKata
                         tracked1 = store1;
                         tracked2 = store2;
                     }
-
                 }
             }
-            Console.WriteLine($"{tracked1.Name} and {tracked2.Name} are the farthest apart with a distance of {distance} meters");
+            Console.WriteLine($"\n{tracked1.Name} and {tracked2.Name} are the farthest apart with a distance of {distance} meters");
         }
     }
 }

@@ -19,14 +19,14 @@
                 return null; 
             }
 
-            try
+            try //Added try catch just in case (not needed) ¯\_(ツ)_/¯
             {
                 latitude = double.Parse(cells[0]);
                 longitude = double.Parse(cells[1]);
             }
             catch
             {
-                logger.LogError($"Couldn't Parse {cells[0]} or {cells[1]} to doubles.");
+                logger.LogError($"Couldn't Parse {cells[0]} or {cells[1]} to doubles."); //Should never happen
             }
             var name = cells[2];
 

@@ -19,9 +19,9 @@ namespace LoggingKata
             var parser = new TacoParser();
             var locations = lines.Select(parser.Parse).ToArray();
 
-            ITrackable tracked1 = null;
+            ITrackable tracked1 = null; //Keeps track of 2 furthest stores during foreach loop and overwrites them
             ITrackable tracked2 = null;
-            var distance = 0.0;
+            var distance = 0.0; //tempDistance is used for each check during loops and overwrites distance and tracked stores if tempDistance exceeds it.
             var tempDistance = 0.0;
 
             foreach(var store1 in locations)
